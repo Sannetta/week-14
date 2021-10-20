@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -9,76 +9,18 @@
 </head>
 
 <body>
-    <h1>Hello, JavaScript!</h1>
+    <h1>Wellcome!</h1>
+    <form>
+        <p>
+            <input type="button" name="start" value="Начать" onclick="clickMe()" id="name">
+        </p>
+    </form>
+
     <script>
-        /*вариант 1*/
-
-        function sum1(a, b) {
-            return a + b;
-        } /*точка с зап не нужна - это кусок кода*/
-
-        var result = sum1(0, 1)
-
-        console.log(result);
-
-        /*вариант 2*/
-
-        var sum = function (a, b) {
-            return a + b;
-        }; /*точка с зап нужна - это выражение заканчивается*/
-
-        var result = sum(1, 1)
-
-        console.log(result);
-
-        /*вариант 3*/
-
-        function my(func) {
-            func();
+        function clickMe() {
+            let name = prompt('Как тебя зовут?');
+            confirm('Тебя зовут ' + name + '?');
         }
-
-        my(function () {
-            console.log(1 + 2)
-        });
-
-        /*вариант 4 - ф-я мгновенного вызова*/
-
-        (function (a, b) {
-            console.log(a + b);
-        })(1, 3);
-
-        /*вариант 5 - ф-я мгновенного вызова*/
-
-        console.log((function (a, b) {
-            return (a + b);
-        })(1, 4));
-
-        /*вариант 6 - стрелочная*/
-
-        const sum2 = (c, d) => c + d;
-
-        console.log(3 + 3);
-
-        /*вариант 7 - стрелочная с одной переменной*/
-
-        let y = x => x * 1
-
-        console.log(7);
-
-        /*вариант 8 - без переменных*/
-
-        let showMessage = () => console.log('Вариант 8');
-
-        showMessage();
-
-        /*вариант 9 - без переменных с несколькими действиями*/
-
-        let showMessage2 = () => {
-            let name = prompt('Имя?');
-            console.log('Привет! ' + name + ', это вариант 9');
-        }
-
-        showMessage2();
     </script>
 </body>
 
