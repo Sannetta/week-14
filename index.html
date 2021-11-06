@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-rows: repeat(2, 200px);
+        }
+
+        .container>div>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card {
+            outline: 2px solid black;
+        }
+
+        .selected {
+            background-color: rgb(216, 211, 221);
+            outline: 2px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Grid auto-fit</h1>
+    <div class="container">
+        <div class="card" onclick="select(this)">
+            <h2>Text</h2>
+            <h3>Text text</h3>
+            Text text text text text text text text text text text text text text text text text text text text text
+            text text
+        </div>
+        <div class="card" onclick="select(this)">
+            <h2>Text</h2>
+            <h3>Text text</h3>
+            Text text text text text text text text text text text text text text text text text text text text text
+            text text
+        </div>
+        <div class="card" onclick="select(this)">
+            <h2>Text</h2>
+            <h3>Text text</h3>
+            Text text text text text text text text text text text text text text text text text text text text text
+            text text
+        </div>
+    </div>
+
+    <script>
+        function select(sender) {
+            console.log(sender);
+            sender.classList.add("selected");
+        }
+    </script>
+</body>
+
+</html>
